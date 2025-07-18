@@ -52,68 +52,133 @@
   <body>
     <header class="header">
       <!-- Header Top Area Start -->
-      <div class="header-top-area bg-primary">
+      <div class="header-top-area bg-primary py-2 d-none d-lg-block">
         <div class="container">
-          <div class="row">
-            <div class="col py-2 py-lg-0 d-flex flex-column align-items-center flex-md-row justify-content-center justify-content-md-between">
-              <div class="header-top-area-left-side d-flex">
-                <!-- social Share Area -->
-                <div class="social-share d-flex gap-2 header-top-area-left-side-item">
-                  <a class="social-share-link facebook" href="https://www.facebook.com/" target="_blank" aria-label="facebook">
-                    <i class="fab fa-facebook-f"></i>
-                  </a>
-                  <a class="social-share-link instagram" href="https://instagram.com/" target="_blank" aria-label="instagram">
-                    <i class="fa-brands fa-instagram"></i>
-                  </a>
-                  <a class="social-share-link whatsapp" href="https://wa.me/529621234567" target="_blank" aria-label="whatsapp">
-                    <i class="fab fa-whatsapp"></i>
-                  </a>
+            <div class="row">
+                <div class="col">
+                    <div class="d-flex justify-content-between align-items-center">
+                        <!-- Redes sociales y teléfono -->
+                        <div class="header-top-left d-flex align-items-center gap-4">
+                            <div class="social-share d-flex gap-3">
+                                <a class="social-share-link text-white" href="#" target="_blank" aria-label="Facebook">
+                                    <i class="fab fa-facebook-f"></i>
+                                </a>
+                                <a class="social-share-link text-white" href="#" target="_blank" aria-label="Instagram">
+                                    <i class="fab fa-instagram"></i>
+                                </a>
+                                <a class="social-share-link text-white" href="#" target="_blank" aria-label="WhatsApp">
+                                    <i class="fab fa-whatsapp"></i>
+                                </a>
+                            </div>
+                        </div>
+                        
+                        <div class="header-top-right">
+                            <div class="contact-number">
+                                <a href="tel:+529621234567" class="text-white">
+                                    <i class="fas fa-phone-alt me-2"></i>
+                                    <span>+52 962 692 3964</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <!-- social Share Area -->
-
-                <div class="contact-number header-top-area-left-side-item">
-                  <a href="tel:+529621234567">
-                    <i class="icon-rt-call-outline"></i>
-                    <span>+52 962 692 3964</span>
-                  </a>
-                </div>
-              </div>
-         
             </div>
-          </div>
         </div>
-      </div>
-      <!-- Header Top Area End -->
+    </div>
 
-      <!-- Header Bottom Area Start -->
-      <div class="hader-bottom-area sticky-header">
+    <!-- Header Bottom Area (Navbar principal) -->
+    <header class="header-bottom-area sticky-header py-3">
         <div class="container">
-          <div class="row align-items-center">
-            <div class="col-4 col-lg-3">
-              <!-- Mobile Menu Toggole Button Start -->
-              <button class="header-action-item d-lg-none mobile-menu-action" aria-label="Mobile Menu Action Button" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvas-mobile-menu">
-                <i class="fa-solid fa-bars"></i>
-              </button>
-              <!-- Mobile Menu Toggole Button End -->
+            <div class="row align-items-center">
+                <!-- Logo - Visible solo en desktop -->
+                <div class="col-lg-3 d-none d-lg-block">
+                    <a href="index" class="navbar-brand">
+                        <img src="assets/images/logo/logo.png" alt="Fragante Dubai" height="40">
+                    </a>
+                </div>
+                
+                <!-- Menú principal - Visible solo en desktop -->
+                <div class="col-lg-6 d-none d-lg-block">
+                    <nav class="nav-main-menu">
+                        <ul class="main-menu d-flex justify-content-center gap-4 mb-0">
+                            <li class="main-menu-item">
+                                <a href="index" class="main-menu-link">Inicio</a>
+                            </li>
+                            <li class="main-menu-item">
+                                <a href="productos" class="main-menu-link">Productos</a>
+                            </li>
+                            <li class="main-menu-item">
+                                <a href="nosotros" class="main-menu-link">Nosotros</a>
+                            </li>
+                            <li class="main-menu-item">
+                                <a href="contacto" class="main-menu-link">Contacto</a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+                
+                <!-- Espacio para elementos adicionales (vacío según lo solicitado) -->
+                <div class="col-lg-3 d-none d-lg-block"></div>
+                
+                <!-- Menú móvil - Botón hamburguesa -->
+                <div class="col-12 d-lg-none">
+                    <div class="d-flex justify-content-between align-items-center">
+                        <button class="btn btn-link mobile-menu-button p-0" 
+                                type="button" 
+                                data-bs-toggle="offcanvas" 
+                                data-bs-target="#offcanvasMobileMenu"
+                                aria-label="Menú móvil">
+                            <i class="fas fa-bars fa-lg"></i>
+                        </button>
+                    </div>
+                </div>
             </div>
-            <div class="col-4 col-lg-6">
-              <!-- Main Menu Area Start -->
-              <nav class="nav-main-menu d-none d-lg-block">
-                <ul class="main-menu">
-                  <li class="main-menu-item">
-                    <a href="index" class="main-menu-link">Inicio</a>
-                  </li>
-                  <li class="main-menu-item">
-                    <a href="productos" class="main-menu-link">Productos</a>
-                  </li>
-                  <li class="main-menu-item">
-                    <a href="nosotros" class="main-menu-link">Nosotros</a>
-                  </li>
-                  <li class="main-menu-item">
-                    <a href="contacto" class="main-menu-link">Contacto</a>
-                  </li>
-                </ul>
-              </nav>
+        </div>
+    </header>
+
+    <!-- Menú Offcanvas para móvil -->
+    <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasMobileMenu">
+        <div class="offcanvas-header border-bottom">
+            <h5 class="offcanvas-title">Menú</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Cerrar"></button>
+        </div>
+        <div class="offcanvas-body">
+            <ul class="mobile-menu list-unstyled">
+                <li class="mb-3">
+                    <a href="index" class="mobile-menu-link text-decoration-none">Inicio</a>
+                </li>
+                <li class="mb-3">
+                    <a href="productos" class="mobile-menu-link text-decoration-none">Productos</a>
+                </li>
+                <li class="mb-3">
+                    <a href="nosotros" class="mobile-menu-link text-decoration-none">Nosotros</a>
+                </li>
+                <li class="mb-3">
+                    <a href="contacto" class="mobile-menu-link text-decoration-none">Contacto</a>
+                </li>
+                <li class="mt-4 pt-3 border-top">
+                    <a href="tel:+529621234567" class="text-decoration-none d-flex align-items-center">
+                        <i class="fas fa-phone-alt me-3"></i>
+                        <span>+52 962 692 3964</span>
+                    </a>
+                </li>
+                <li class="mt-3">
+                    <div class="social-share d-flex gap-3">
+                        <a class="social-share-link" href="#" target="_blank" aria-label="Facebook">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a class="social-share-link" href="#" target="_blank" aria-label="Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a class="social-share-link" href="#" target="_blank" aria-label="WhatsApp">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+
            
     </header>
 
@@ -606,31 +671,7 @@
 
         <!-- Swiper Slide Item Start -->
         <div class="swiper-slide">
-          <!-- Product Card Start -->
-          <div class="product-card">
-            <div class="product-card-thumb-area">
-              <a href="productos" class="product-card-thumb">
-                <img class="product-card-thumb-primary" src="assets/images/products/product-13.jpg" alt="Moiselle de Maison Alhambra - Fragancia femenina" width="340"  height="320"  loading="lazy" />
-              </a>
-              <button class="product-card-action-quickview" data-bs-target="#product-modal-13" data-bs-toggle="modal"> Vista Rápida</button>
-            </div>
-            <ul class="product-card-action-links">
-              <li class="product-card-action-item">
-                <a href="#" class="product-card-action-link" aria-label="Agregar a favoritos">
-                  <i class="fa-regular fa-heart"></i>
-                </a>
-              </li>
-            </ul>
-            <div class="product-card-content">
-              <h4 class="product-card-title">
-                <a href="productos">Moiselle de Maison Alhambra</a>
-              </h4>
-              <div class="product-card-price">
-                <span class="visually-hidden">Precio disponible al consultar</span>
-              </div>
-            </div>
-          </div>
-          <!-- Product Card End -->
+         
         </div>
         <!-- Swiper Slide Item End -->
       </div>
@@ -651,86 +692,166 @@
 </section>
 <!-- Product Section End -->
      
-
-     <!-- Partner Brand Section Start -->
+<!-- Partner Brand Section Start -->
 <section class="partner-brand-section section-space-ptb bg-default">
-    <div class="container">
-        <h2 class="visually-hidden">Partner Brand Section</h2>
+  <div class="container">
+    <h2 class="section-title text-center mb-5">Nuestras Marcas</h2>
 
-        <!-- Carrusel de Bootstrap -->
-        <div id="brandCarousel" class="carousel slide" data-bs-ride="carousel">
-            <div class="carousel-inner">
+    <!-- Carrusel de Bootstrap -->
+    <div id="brandCarousel" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-inner">
 
-                <!-- Slide 1 -->
-                <div class="carousel-item active">
-                    <div class="row justify-content-center text-center">
-                        <div class="col-6 col-md-3 col-lg-3">
-                            <a href="#" class="single-partner-brand">
-                                <img src="assets/images/patner-brand/brand-1.png" alt="Brand 01" class="img-fluid" loading="lazy">
-                            </a>
-                        </div>
-                        <div class="col-6 col-md-3 col-lg-3">
-                            <a href="#" class="single-partner-brand">
-                                <img src="assets/images/patner-brand/brand-2.png" alt="Brand 02" class="img-fluid" loading="lazy">
-                            </a>
-                        </div>
-                        <div class="col-6 col-md-3 col-lg-3 d-none d-md-block">
-                            <a href="#" class="single-partner-brand">
-                                <img src="assets/images/patner-brand/brand-3.png" alt="Brand 03" class="img-fluid" loading="lazy">
-                            </a>
-                        </div>
-                        <div class="col-6 col-md-3 col-lg-3 d-none d-md-block">
-                            <a href="#" class="single-partner-brand">
-                                <img src="assets/images/patner-brand/brand-4.png" alt="Brand 04" class="img-fluid" loading="lazy">
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Slide 2 -->
-                <div class="carousel-item">
-                    <div class="row justify-content-center text-center">
-                        <div class="col-6 col-md-3 col-lg-3">
-                            <a href="#" class="single-partner-brand">
-                                <img src="assets/images/patner-brand/brand-5.png" alt="Brand 05" class="img-fluid" loading="lazy">
-                            </a>
-                        </div>
-                        <div class="col-6 col-md-3 col-lg-3">
-                            <a href="#" class="single-partner-brand">
-                                <img src="assets/images/patner-brand/brand-6.png" alt="Brand 06" class="img-fluid" loading="lazy">
-                            </a>
-                        </div>
-                        <div class="col-6 col-md-3 col-lg-3 d-none d-md-block">
-                            <a href="#" class="single-partner-brand">
-                                <img src="assets/images/patner-brand/brand-7.png" alt="Brand 07" class="img-fluid" loading="lazy">
-                            </a>
-                        </div>
-                        <div class="col-6 col-md-3 col-lg-3 d-none d-md-block">
-                            <!-- Opcional: otro logo o repetir alguno -->
-                            <a href="#" class="single-partner-brand">
-                                <img src="assets/images/patner-brand/brand-1.png" alt="Brand 01 repeat" class="img-fluid" loading="lazy">
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
+        <!-- Slide 1 -->
+        <div class="carousel-item active">
+          <div class="row g-3 justify-content-center">
+            <!-- Móvil: 1 y 2 -->
+            <div class="col-6 d-lg-none">
+              <div class="single-partner-brand text-center p-3">
+                <img src="assets/images/patner-brand/brand-1.png" alt="Marca 1" class="img-fluid" loading="lazy">
+              </div>
+            </div>
+            <div class="col-6 d-lg-none">
+              <div class="single-partner-brand text-center p-3">
+                <img src="assets/images/patner-brand/brand-2.png" alt="Marca 2" class="img-fluid" loading="lazy">
+              </div>
             </div>
 
-            <!-- Controles del carrusel -->
-            <button class="carousel-control-prev" type="button" data-bs-target="#brandCarousel" data-bs-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Anterior</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#brandCarousel" data-bs-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Siguiente</span>
-            </button>
+            <!-- Tablet -->
+            <div class="col-6 col-md-4 d-none d-md-block d-lg-none">
+              <div class="single-partner-brand text-center p-3">
+                <img src="assets/images/patner-brand/brand-3.png" alt="Marca 3" class="img-fluid" loading="lazy">
+              </div>
+            </div>
+
+            <!-- Desktop -->
+            <div class="col-md-4 col-lg-3 d-none d-lg-block">
+              <div class="single-partner-brand text-center p-3">
+                <img src="assets/images/patner-brand/brand-1.png" alt="Marca 1" class="img-fluid" loading="lazy">
+              </div>
+            </div>
+            <div class="col-md-4 col-lg-3 d-none d-lg-block">
+              <div class="single-partner-brand text-center p-3">
+                <img src="assets/images/patner-brand/brand-2.png" alt="Marca 2" class="img-fluid" loading="lazy">
+              </div>
+            </div>
+            <div class="col-md-4 col-lg-3 d-none d-lg-block">
+              <div class="single-partner-brand text-center p-3">
+                <img src="assets/images/patner-brand/brand-3.png" alt="Marca 3" class="img-fluid" loading="lazy">
+              </div>
+            </div>
+            <div class="col-md-4 col-lg-3 d-none d-lg-block">
+              <div class="single-partner-brand text-center p-3">
+                <img src="assets/images/patner-brand/brand-4.png" alt="Marca 4" class="img-fluid" loading="lazy">
+              </div>
+            </div>
+          </div>
         </div>
+
+        <!-- Slide 2 -->
+        <div class="carousel-item">
+          <div class="row g-3 justify-content-center">
+            <!-- Móvil: 3 y 4 -->
+            <div class="col-6 d-lg-none">
+              <div class="single-partner-brand text-center p-3">
+                <img src="assets/images/patner-brand/brand-3.png" alt="Marca 3" class="img-fluid" loading="lazy">
+              </div>
+            </div>
+            <div class="col-6 d-lg-none">
+              <div class="single-partner-brand text-center p-3">
+                <img src="assets/images/patner-brand/brand-4.png" alt="Marca 4" class="img-fluid" loading="lazy">
+              </div>
+            </div>
+
+            <!-- Tablet -->
+            <div class="col-6 col-md-4 d-none d-md-block d-lg-none">
+              <div class="single-partner-brand text-center p-3">
+                <img src="assets/images/partner-brand/brand-5.png" alt="Marca 5" class="img-fluid" loading="lazy">
+              </div>
+            </div>
+
+            <!-- Desktop -->
+            <div class="col-md-4 col-lg-3 d-none d-lg-block">
+              <div class="single-partner-brand text-center p-3">
+                <img src="assets/images/patner-brand/brand-5.png" alt="Marca 5" class="img-fluid" loading="lazy">
+              </div>
+            </div>
+            <div class="col-md-4 col-lg-3 d-none d-lg-block">
+              <div class="single-partner-brand text-center p-3">
+                <img src="assets/images/patner-brand/brand-6.png" alt="Marca 6" class="img-fluid" loading="lazy">
+              </div>
+            </div>
+            <div class="col-md-4 col-lg-3 d-none d-lg-block">
+              <div class="single-partner-brand text-center p-3">
+                <img src="assets/images/patner-brand/brand-7.png" alt="Marca 7" class="img-fluid" loading="lazy">
+              </div>
+            </div>
+            <div class="col-md-4 col-lg-3 d-none d-lg-block">
+              <div class="single-partner-brand text-center p-3">
+                <img src="assets/images/patner-brand/brand-8.png" alt="Marca 8" class="img-fluid" loading="lazy">
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Slide 3 -->
+        <div class="carousel-item">
+          <div class="row g-3 justify-content-center">
+            <!-- Móvil: 5 y 6 -->
+            <div class="col-6 d-lg-none">
+              <div class="single-partner-brand text-center p-3">
+                <img src="assets/images/patner-brand/brand-5.png" alt="Marca 5" class="img-fluid" loading="lazy">
+              </div>
+            </div>
+            <div class="col-6 d-lg-none">
+              <div class="single-partner-brand text-center p-3">
+                <img src="assets/images/patner-brand/brand-6.png" alt="Marca 6" class="img-fluid" loading="lazy">
+              </div>
+            </div>
+
+            <!-- Tablet -->
+            <div class="col-6 col-md-4 d-none d-md-block d-lg-none">
+              <div class="single-partner-brand text-center p-3">
+                <img src="assets/images/patner-brand/brand-6.png" alt="Marca 6" class="img-fluid" loading="lazy">
+              </div>
+            </div>
+
+            <!-- Desktop -->
+            <div class="col-md-4 col-lg-3 d-none d-lg-block">
+              <div class="single-partner-brand text-center p-3">
+                <img src="assets/images/patner-brand/brand-7.png" alt="Marca 9" class="img-fluid" loading="lazy">
+              </div>
+            </div>
+            <div class="col-md-4 col-lg-3 d-none d-lg-block">
+              <div class="single-partner-brand text-center p-3">
+                <img src="assets/images/patner-brand/brand-10.png" alt="Marca 10" class="img-fluid" loading="lazy">
+              </div>
+            </div>
+            <div class="col-md-4 col-lg-3 d-none d-lg-block">
+              <div class="single-partner-brand text-center p-3">
+                <img src="assets/images/patner-brand/brand-11.png" alt="Marca 11" class="img-fluid" loading="lazy">
+              </div>
+            </div>
+            <div class="col-md-4 col-lg-3 d-none d-lg-block">
+              <div class="single-partner-brand text-center p-3">
+                <img src="assets/images/patner-brand/brand-12.png" alt="Marca 12" class="img-fluid" loading="lazy">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Controles del carrusel -->
+      <button class="carousel-control-prev" type="button" data-bs-target="#brandCarousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon bg-dark rounded-circle p-3" aria-hidden="true"></span>
+        <span class="visually-hidden">Anterior</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#brandCarousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon bg-dark rounded-circle p-3" aria-hidden="true"></span>
+        <span class="visually-hidden">Siguiente</span>
+      </button>
     </div>
+  </div>
 </section>
-<!-- Partner Brand Section End -->
-
-
 
 <!-- Sección de Blog Start -->
 <section class="blog-section section-space-ptb">
@@ -1438,181 +1559,85 @@
     </div>
     <!-- Product Modal End -->
 
-    <!-- Footer Area Start -->
-    <footer class="footer-area bg-gray">
-      <div class="footer-top-area section-space-pt">
-        <div class="container-xxl">
-          <div class="row">
-            <div class="col-sm-12 col-md-7 col-lg-8">
-              <div class="row row-cols-2 row-cols-sm-3 row-cols-md-3">
-                <div class="col">
-                  <!-- Footer Widget Start -->
-                  <div class="footer-widget">
-                    <h5 class="footer-widget--title" title="Compañía">
-                      Aroma Fragante
-                    </h5>
-                    <ul class="widget--menu">
-                      <li class="widget--menu-item">
-                        <a href="nosotros" class="widget--menu-link"
-                          >Nosotros</a
-                        >
-                      </li>
-                      <li class="widget--menu-item">
-                        <a href="contacto" class="widget--menu-link"
-                          >Contacto</a
-                        >
-                      </li>
-                      <li class="widget--menu-item">
-                        <a href="#" class="widget--menu-link"
-                          >Ubicación en Tapachula</a
-                        >
-                      </li>
-                      <li class="widget--menu-item">
-                        <a href="#" class="widget--menu-link"
-                          >Política de Privacidad</a
-                        >
-                      </li>
-                      <li class="widget--menu-item">
-                        <a href="#" class="widget--menu-link"
-                          >Términos y Condiciones</a
-                        >
-                      </li>
-                    </ul>
-                  </div>
-                  <!-- Footer Widget End -->
-                </div>
-                <div class="col">
-           
-<div class="col">
-    <!-- Footer Widget Start -->
-    <div class="footer-widget">
-        <a href="index" class="d-inline-block mb-3">
-            <img 
+ <!-- Footer Area Start -->
+<footer class="footer-area bg-gray">
+  <div class="footer-top-area section-space-pt">
+    <div class="container">
+      <div class="row gy-4 justify-content-between">
+
+        <!-- Menú de Información -->
+        <div class="col-md-4 col-lg-3">
+          <div class="footer-widget">
+            <h5 class="footer-widget--title" title="Compañía">Aroma Fragante</h5>
+            <ul class="widget--menu list-unstyled">
+              <li><a href="nosotros" class="widget--menu-link">Nosotros</a></li>
+              <li><a href="contacto" class="widget--menu-link">Contacto</a></li>
+              <li><a href="contacto" class="widget--menu-link">Ubicación en Tapachula</a></li>
+              <li><a href="politicas-privacidad" class="widget--menu-link">Política de Privacidad</a></li>
+              <li><a href="terminos-condiciones" class="widget--menu-link">Términos y Condiciones</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Logo y Redes Sociales -->
+        <div class="col-md-4 col-lg-4 text-center text-md-start">
+          <div class="footer-widget">
+            <a href="index" class="d-inline-block mb-3">
+              <img 
                 src="assets/images/logo/logo.png" 
                 alt="Aroma Fragante - Logo" 
                 width="180" 
                 height="auto"
                 loading="lazy"
-            >
-        </a>
-        <div class="social-links mt-3">
-            <a href="#" class="social-link" aria-label="Facebook">
+              >
+            </a>
+            <div class="social-links mt-3">
+              <a href="#" class="social-link me-2" aria-label="Facebook">
                 <i class="fab fa-facebook-f"></i>
-            </a>
-            <a href="#" class="social-link" aria-label="Instagram">
+              </a>
+              <a href="#" class="social-link me-2" aria-label="Instagram">
                 <i class="fab fa-instagram"></i>
-            </a>
-            <a href="#" class="social-link" aria-label="WhatsApp">
+              </a>
+              <a href="#" class="social-link" aria-label="WhatsApp">
                 <i class="fab fa-whatsapp"></i>
-            </a>
-        </div>
-    </div>
-    <!-- Footer Widget End -->
-</div>
-                  <!-- Footer Widget End -->
-                </div>
-                <div class="col">
-                  <!-- Footer Widget Start -->
-                  <div class="footer-widget">
-                    <h5 class="footer-widget--title" title="Atención">
-                      Atención
-                    </h5>
-                    <ul class="widget--menu">
-                      <li class="widget--menu-item">
-                        <a href="tel:+529621234567" class="widget--menu-link"
-                          >Tel: 962 692 3964</a
-                        >
-                      </li>
-                      <li class="widget--menu-item">
-                        <a href="mailto:info@aromafragante.com" class="widget--menu-link"
-                          >Email: info@aromafragante.com</a
-                        >
-                      </li>
-                      <li class="widget--menu-item">
-                        <span class="widget--menu-link"
-                          >Horario: Lunes a Sábado 10am - 8pm</span
-                        >
-                      </li>
-                      <li class="widget--menu-item">
-                        <span class="widget--menu-link"
-                          >Av. Central #123, Centro, Tapachula, Chiapas</span
-                        >
-                      </li>
-                    </ul>
-                  </div>
-                  <!-- Footer Widget End -->
-                </div>
-              </div>
-            </div>
-            <div class="col-sm-12 col-md-5 col-lg-4">
-              <!-- Footer Widget Start -->
-              <div class="footer-widget">
-                <h5
-                  class="footer-widget--title"
-                  title="Suscríbete y obtén 10% de descuento"
-                >
-                  Suscríbete y obtén 10% de descuento
-                </h5>
-                <div class="widget-newsletter">
-                  <p class="fs-16 mb-3">
-                    Sé el primero en conocer ofertas especiales, nuevos productos y más.
-                  </p>
-                  <form action="#" class="widget-newsletter-from mb-4">
-                    <input
-                      type="text"
-                      class="widget-newsletter-input"
-                      placeholder="Ingresa tu correo electrónico"
-                    />
-                    <button
-                      class="btn btn-dark btn-lg widget-newsletter-button"
-                      type="submit"
-                    >
-                      Suscribirse
-                    </button>
-                  </form>
-                  <p class="mb-0">
-                    Recibirás noticias y ofertas de Aroma Fragante Parfum. 
-                    Puedes cancelar tu suscripción en cualquier momento.
-                  </p>
-                  <p>
-                    He leído la 
-                    <a
-                      href="#"
-                      class="text-black fw-medium text-decoration-underline"
-                      target="_blank"
-                      >Política de Privacidad</a
-                    > de Aroma Fragante Parfum.
-                  </p>
-                </div>
-              </div>
-              <!-- Footer Widget End -->
+              </a>
             </div>
           </div>
         </div>
-      </div>
-      <div class="footer-bottom bg-dark py-3">
-        <div class="container">
-          <div
-            class="d-flex flex-column flex-md-row justify-content-md-between align-items-center"
-          >
-            <p class="text-white mb-md-0">
-              &copy; 2025 <a href="#" target="_blank">Aroma Fragante Parfum</a>. 
-              Todos los derechos reservados.
-            </p>
-            <div class="payment">
-              <img
-                src="assets/images/others/payment.png"
-                width="286"
-                height="23"
-                alt="Métodos de pago aceptados: Visa, Mastercard, American Express"
-              />
-            </div>
-          </div>
-        </div>
-      </div>
-    </footer>
 
-    <!-- Footer Area End -->
+        <!-- Métodos de Pago -->
+        <div class="col-md-4 col-lg-3 text-md-end text-center">
+          <div class="footer-widget">
+            <h6 class="footer-widget--title">Métodos de pago</h6>
+            <img
+              src="assets/images/others/payment.png"
+              alt="Métodos de pago aceptados: Visa, Mastercard, American Express"
+              width="260"
+              height="auto"
+              loading="lazy"
+            />
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- Parte inferior -->
+  <div class="footer-bottom bg-dark py-3">
+    <div class="container">
+      <div class="d-flex flex-column flex-md-row justify-content-between align-items-center text-white text-center text-md-start">
+        <p class="mb-2 mb-md-0">
+          &copy; 2025 <a href="#" class="text-white text-decoration-underline">Aroma Fragante Parfum</a>. Todos los derechos reservados.
+        </p>
+        <div class="d-none d-md-block">
+          <small>Desarrollado por SoftdevAgency</small>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+<!-- Footer Area End -->
 
     <!-- Vendors JS -->
     <script src="assets/js/modernizr-3.11.7.min.js"></script>
