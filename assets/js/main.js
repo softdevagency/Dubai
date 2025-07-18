@@ -957,3 +957,27 @@ const updateCountdown = (countdownSelector) => {
 document.querySelectorAll(".countdown").forEach((countdownSelector) => {
   updateCountdown(countdownSelector);
 });
+document.addEventListener('DOMContentLoaded', function() {
+    // Inicializar carrusel
+    var brandCarousel = new bootstrap.Carousel(document.getElementById('brandCarousel'), {
+        interval: 3000,
+        wrap: true,
+        touch: true
+    });
+
+    // Ajustar dinámicamente para desktop
+    function adjustForDesktop() {
+        var carouselItems = document.querySelectorAll('#brandCarousel .carousel-item');
+        if (window.innerWidth >= 992) {
+            // Ocultar el tercer slide en desktop
+            carouselItems[2].classList.add('d-none');
+        } else {
+            // Mostrar el tercer slide en móvil/tablet
+            carouselItems[2].classList.remove('d-none');
+        }
+    }
+
+    // Ejecutar al cargar y al redimensionar
+    adjustForDesktop();
+    window.addEventListener('resize', adjustForDesktop);
+});
