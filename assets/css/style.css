@@ -4713,3 +4713,57 @@ hr {
         justify-content: center;
         padding: 1rem;
     }
+    /* Estilos base */
+.single-partner-brand {
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    padding: 20px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s ease;
+}
+
+.single-partner-brand img {
+    max-height: 80px;
+    width: auto;
+    filter: grayscale(100%);
+    opacity: 0.7;
+    transition: all 0.3s ease;
+}
+
+.single-partner-brand:hover img {
+    filter: grayscale(0%);
+    opacity: 1;
+}
+
+/* Controles de navegación */
+.carousel-control-prev,
+.carousel-control-next {
+    width: 40px;
+    height: 40px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.7);
+    border-radius: 50%;
+    opacity: 1;
+}
+
+/* Ajustes para móvil */
+@media (max-width: 767.98px) {
+    .single-partner-brand {
+        padding: 15px;
+    }
+    .single-partner-brand img {
+        max-height: 60px;
+    }
+}
+
+/* Ajustes para tablet */
+@media (min-width: 768px) and (max-width: 991.98px) {
+    .single-partner-brand img {
+        max-height: 70px;
+    }
+}
