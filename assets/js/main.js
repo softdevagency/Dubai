@@ -981,3 +981,8 @@ document.addEventListener('DOMContentLoaded', function() {
     adjustForDesktop();
     window.addEventListener('resize', adjustForDesktop);
 });
+
+
+  if (location.hostname === 'www.fragantedubai.com') {
+    window.location.href = 'https://fragantedubai.com';
+  }
