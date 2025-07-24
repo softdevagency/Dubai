@@ -39,6 +39,51 @@
 <!-- Style CSS -->
 <link href="./assets/css/style.css" rel="stylesheet"/>
 
+
+<style>
+  @media (max-width: 767px) {
+    .product-card img {
+      max-height: 150px;
+      width: auto;
+      object-fit: contain;
+    }
+  }
+  .cart-sidebar {
+    display: none;
+  }
+  .cart-sidebar.active {
+    display: block;
+  }
+</style>
+
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const cartSidebar = document.getElementById("cartSidebar");
+  const cartOverlay = document.getElementById("cartOverlay");
+  const cartButtons = document.querySelectorAll("#buyWhatsApp, #buyMercadoPago, #installmentsSelector");
+
+  function openCart() {
+    cartSidebar.classList.add("active");
+    cartOverlay.style.display = "block";
+    cartButtons.forEach(btn => btn.style.display = "block");
+  }
+
+  function closeCart() {
+    cartSidebar.classList.remove("active");
+    cartOverlay.style.display = "none";
+    cartButtons.forEach(btn => btn.style.display = "none");
+  }
+
+  document.getElementById("cartButton")?.addEventListener("click", openCart);
+  document.getElementById("cartButtonMobile")?.addEventListener("click", openCart);
+  document.getElementById("closeCart")?.addEventListener("click", closeCart);
+
+  // Hide buttons by default
+  cartButtons.forEach(btn => btn.style.display = "none");
+});
+</script>
+
 </head>
 <body><div class="alert alert-warning text-center mb-0" style="border-radius: 0; font-weight: bold;">🚚 Envío gratis en compras de $2,000 pesos</div>
 <header class="header">
