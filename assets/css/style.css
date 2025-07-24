@@ -1657,13 +1657,13 @@ hr {
 }
 .btn-outline {
   background-color: transparent;
-  border-color: #df9a91;
-  color: #df9a91;
-  border: 1px solid #df9a91;
+  border-color: #c5766c;
+  color: #c5766c;
+  border: 1px solid #c5766c;
 }
 .btn-outline:hover {
-  background-color: #df9a91;
-  border-color: #df9a91;
+  background-color: #c5766c;
+  border-color: #c5766c;
   color: #ffffff;
 }
 .btn-outline-light {
@@ -4766,4 +4766,89 @@ hr {
     .single-partner-brand img {
         max-height: 70px;
     }
+}
+
+/* Estilos adicionales para el carrito */
+    .cart-sidebar {
+      position: fixed;
+      top: 0;
+      right: -400px;
+      width: 400px;
+      height: 100%;
+      background: white;
+      box-shadow: -5px 0 15px rgba(0,0,0,0.1);
+      transition: right 0.3s ease;
+      z-index: 1050;
+      padding: 20px;
+      overflow-y: auto;
+    }
+    
+    .cart-sidebar.open {
+      right: 0;
+    }
+    
+    .cart-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.5);
+      z-index: 1040;
+      display: none;
+    }
+    
+    .cart-overlay.open {
+      display: block;
+    }
+    
+    .cart-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 0;
+      border-bottom: 1px solid #eee;
+    }
+    
+    .cart-item img {
+      width: 50px;
+      height: 50px;
+      object-fit: cover;
+    }
+    
+    .cart-total {
+      font-weight: bold;
+      font-size: 1.2rem;
+      margin-top: 20px;
+      padding-top: 10px;
+      border-top: 2px solid #333;
+    }
+    
+    @media (max-width: 576px) {
+      .cart-sidebar {
+        width: 100%;
+        right: -100%;
+      }
+    }
+  
+.cart-item h6::before {
+    color: #b49c6f; /* Azul Bootstrap */
+}
+
+.btn-outline-secondary {
+    color: white !important;
+    background-color: #b49c6f !important;
+    border-color: #b49c6f !important;
+}
+.btn-outline-secondary:hover {
+    background-color: #b49c6f !important;
+    border-color: #b49c6f !important;
+}
+
+.card-img-top {
+  height: 250px;
+  object-fit: contain;
+  width: 100%;
+  background-color: #f8f8f8; /* o blanco */
+  padding: 10px;
 }
