@@ -303,6 +303,14 @@ document.addEventListener('DOMContentLoaded', () => {
       existing.quantity += 1;
     } else {
       cart.push({ name, price, image, quantity: 1 });
+    button.textContent = '✓ Agregado';
+    button.classList.remove('btn-outline-primary');
+    button.classList.add('btn-success');
+    setTimeout(() => {
+      button.textContent = 'Agregar';
+      button.classList.remove('btn-success');
+      button.classList.add('btn-outline-primary');
+    }, 1000);
     }
     renderCart();
   }
@@ -316,29 +324,43 @@ document.addEventListener('DOMContentLoaded', () => {
 
   document.getElementById('buyMercadoPago').addEventListener('click', () => {
     if (cart.length === 0) return;
-    const months = document.getElementById('installmentsSelector').value;
-    if (months === '1') {
-      alert('Compra con Mercado Pago en un solo pago (de contado).');
-    } else {
-      alert('Compra con Mercado Pago a ' + months + ' meses sin intereses.');
-    }
-  });
 
-  document.getElementById('buyWhatsApp').addEventListener('click', () => {
-    if (cart.length === 0) return;
-    let message = "¡Hola! Me gustaría comprar los siguientes perfumes:\n\n";
-    let total = 0;
-    cart.forEach((item, index) => {
-      const subtotal = item.price * item.quantity;
-      total += subtotal;
-      message += `${index + 1}. ${item.name} - $${item.price.toFixed(2)} x ${item.quantity} = $${subtotal.toFixed(2)}\n`;
+    let items = cart.map(item => ({
+      title: item.name,
+      quantity: item.quantity,
+      unit_price: item.price,
+      currency_id: "MXN"
+    }));
+
+    fetch("https://api.mercadopago.com/checkout/preferences", {
+      method: "POST",
+      headers: {
+        Authorization: "Bearer TEST-4844991177063586-072501-8dc9db59edb9cec43ec06f6e9312e889-128349064",
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        items,
+        back_urls: {
+          success: "https://www.fragantedubai.com/success.html",
+          failure: "https://www.fragantedubai.com/failure.html",
+          pending: "https://www.fragantedubai.com/pending.html"
+        },
+        auto_return: "approved"
+      })
+    })
+    .then(res => res.json())
+    .then(data => {
+      if (data.init_point) {
+        window.location.href = data.init_point;
+      } else {
+        console.error("Error en la respuesta:", data);
+        alert("No se pudo generar el link de pago.");
+      }
+    })
+    .catch(err => {
+      console.error("Error creando preferencia:", err);
+      alert("Hubo un error al conectar con Mercado Pago");
     });
-    if (total >= 2000) {
-      message += `\n*¡Felicidades! Esta compra califica para envío gratis.*`;
-    }
-    message += `\n\nTotal: $${total.toFixed(2)}\n¿Podrían ayudarme a finalizar la compra?`;
-    const url = `https://wa.me/529626923964?text=${encodeURIComponent(message)}`;
-    window.open(url, '_blank');
   });
 
   createPaginationControls();
