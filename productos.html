@@ -38,8 +38,6 @@
 <link href="./assets/css/swiper-bundle.min.css" rel="stylesheet"/>
 <!-- Style CSS -->
 <link href="./assets/css/style.css" rel="stylesheet"/>
-
-
 <style>
   @media (max-width: 767px) {
     .product-card img {
@@ -55,8 +53,6 @@
     display: block;
   }
 </style>
-
-
 <script>
 document.addEventListener("DOMContentLoaded", function () {
   const cartSidebar = document.getElementById("cartSidebar");
@@ -83,7 +79,6 @@ document.addEventListener("DOMContentLoaded", function () {
   cartButtons.forEach(btn => btn.style.display = "none");
 });
 </script>
-
 </head>
 <body><div class="alert alert-warning text-center mb-0" style="border-radius: 0; font-weight: bold;">🚚 Envío gratis en compras de $2,000 pesos</div>
 <header class="header">
@@ -220,7 +215,7 @@ document.addEventListener("DOMContentLoaded", function () {
 <span id="cartTotal">$0.00</span>
 </div>
 <div class="d-grid gap-2 mt-4">
-<button class="btn btn-success" id="buyWhatsApp">Comprar por WhatsApp</button>
+<div class="alert alert-success text-center" id="whatsappDiscountMsg" style="font-weight:bold; background-color:#d4edda; color:#155724; border:1px solid #c3e6cb;">🎉 ¡15% de descuento si compras por WhatsApp!</div><button class="btn btn-success" id="buyWhatsApp">Comprar por WhatsApp</button>
 <button class="btn btn-primary" id="buyMercadoPago">Comprar con Mercado Pago</button>
 <select class="form-select mt-2" id="installmentsSelector">
 <option value="1">1 pago</option>
@@ -272,8 +267,8 @@ document.addEventListener("DOMContentLoaded", function () {
 <h5 class="card-title">Lataffa Bourbon Asad</h5>
 <p class="card-text">Fragancia oriental intensa con vainilla y ámbar.</p>
 <div class="d-flex justify-content-between align-items-center">
-<span class="h5 mb-0">$1184.70</span>
-<button class="btn btn-sm btn-outline-primary add-to-cart" data-id="1" data-image="assets/images/products/product-1.jpg" data-name="Lataffa Bourbon Asad" data-price="1184.7">Agregar</button>
+<span class="h5 mb-0">$1275.84</span>
+<button class="btn btn-sm btn-outline-primary add-to-cart" data-id="1" data-image="assets/images/products/product-1.jpg" data-name="Lataffa Bourbon Asad" data-price="1275.84">Agregar</button>
 </div>
 </div>
 </div>
@@ -283,8 +278,8 @@ document.addEventListener("DOMContentLoaded", function () {
 <h5 class="card-title">Raghba con desodorante</h5>
 <p class="card-text">Notas dulces, vainilla y oud. Incluye desodorante.</p>
 <div class="d-flex justify-content-between align-items-center">
-<span class="h5 mb-0">$806.67</span>
-<button class="btn btn-sm btn-outline-primary add-to-cart" data-id="2" data-image="assets/images/products/product-2.jpg" data-name="Raghba con desodorante" data-price="806.67">Agregar</button>
+<span class="h5 mb-0">$868.70</span>
+<button class="btn btn-sm btn-outline-primary add-to-cart" data-id="2" data-image="assets/images/products/product-2.jpg" data-name="Raghba con desodorante" data-price="868.70">Agregar</button>
 </div>
 </div>
 </div>
@@ -294,8 +289,8 @@ document.addEventListener("DOMContentLoaded", function () {
 <h5 class="card-title">Armaf Hunter Killer</h5>
 <p class="card-text">Aromático y fresco, ideal para el hombre moderno.</p>
 <div class="d-flex justify-content-between align-items-center">
-<span class="h5 mb-0">$968.22</span>
-<button class="btn btn-sm btn-outline-primary add-to-cart" data-id="3" data-image="assets/images/products/product-3.jpg" data-name="Armaf Hunter Killer" data-price="968.22">Agregar</button>
+<span class="h5 mb-0">$1042.68</span>
+<button class="btn btn-sm btn-outline-primary add-to-cart" data-id="3" data-image="assets/images/products/product-3.jpg" data-name="Armaf Hunter Killer" data-price="1042.68">Agregar</button>
 </div>
 </div>
 </div>
@@ -305,8 +300,8 @@ document.addEventListener("DOMContentLoaded", function () {
 <h5 class="card-title">Armaf Art Du Armour pour Femme</h5>
 <p class="card-text">Dulce y floral, ideal para uso diario en mujeres.</p>
 <div class="d-flex justify-content-between align-items-center">
-<span class="h5 mb-0">$914.37</span>
-<button class="btn btn-sm btn-outline-primary add-to-cart" data-id="4" data-image="assets/images/products/product-4.jpg" data-name="Armaf Art Du Armour pour Femme" data-price="914.37">Agregar</button>
+<span class="h5 mb-0">$984.68</span>
+<button class="btn btn-sm btn-outline-primary add-to-cart" data-id="4" data-image="assets/images/products/product-4.jpg" data-name="Armaf Art Du Armour pour Femme" data-price="984.68">Agregar</button>
 </div>
 </div>
 </div>
@@ -316,8 +311,8 @@ document.addEventListener("DOMContentLoaded", function () {
 <h5 class="card-title">Perfume Khamrah Qahwa</h5>
 <p class="card-text">Especias cálidas, café y vainilla oriental.</p>
 <div class="d-flex justify-content-between align-items-center">
-<span class="h5 mb-0">$860.52</span>
-<button class="btn btn-sm btn-outline-primary add-to-cart" data-id="5" data-image="assets/images/products/product-5.jpg" data-name="Perfume Khamrah Qahwa" data-price="860.52">Agregar</button>
+<span class="h5 mb-0">$926.67</span>
+<button class="btn btn-sm btn-outline-primary add-to-cart" data-id="5" data-image="assets/images/products/product-5.jpg" data-name="Perfume Khamrah Qahwa" data-price="926.67">Agregar</button>
 </div>
 </div>
 </div>
@@ -327,8 +322,8 @@ document.addEventListener("DOMContentLoaded", function () {
 <h5 class="card-title">Lataffa Silver Ramz</h5>
 <p class="card-text">Fresco y cítrico con notas de madera suave.</p>
 <div class="d-flex justify-content-between align-items-center">
-<span class="h5 mb-0">$707.79</span>
-<button class="btn btn-sm btn-outline-primary add-to-cart" data-id="6" data-image="assets/images/products/product-6.jpg" data-name="Lataffa Silver Ramz" data-price="707.79">Agregar</button>
+<span class="h5 mb-0">$762.21</span>
+<button class="btn btn-sm btn-outline-primary add-to-cart" data-id="6" data-image="assets/images/products/product-6.jpg" data-name="Lataffa Silver Ramz" data-price="762.21">Agregar</button>
 </div>
 </div>
 </div>
@@ -338,8 +333,8 @@ document.addEventListener("DOMContentLoaded", function () {
 <h5 class="card-title">Armaf Odyssey Mandarin</h5>
 <p class="card-text">Mandarina, ámbar y cuero. Masculino y vibrante.</p>
 <div class="d-flex justify-content-between align-items-center">
-<span class="h5 mb-0">$968.22</span>
-<button class="btn btn-sm btn-outline-primary add-to-cart" data-id="7" data-image="assets/images/products/product-7.jpg" data-name="Armaf Odyssey Mandarin" data-price="968.22">Agregar</button>
+<span class="h5 mb-0">$1042.68</span>
+<button class="btn btn-sm btn-outline-primary add-to-cart" data-id="7" data-image="assets/images/products/product-7.jpg" data-name="Armaf Odyssey Mandarin" data-price="1042.68">Agregar</button>
 </div>
 </div>
 </div>
@@ -349,8 +344,8 @@ document.addEventListener("DOMContentLoaded", function () {
 <h5 class="card-title">Armaf The Pride Rouge Woman</h5>
 <p class="card-text">Floral dulce con almizcle para la mujer elegante.</p>
 <div class="d-flex justify-content-between align-items-center">
-<span class="h5 mb-0">$968.22</span>
-<button class="btn btn-sm btn-outline-primary add-to-cart" data-id="8" data-image="assets/images/products/product-8.jpg" data-name="Armaf The Pride Rouge Woman" data-price="968.22">Agregar</button>
+<span class="h5 mb-0">$1042.68</span>
+<button class="btn btn-sm btn-outline-primary add-to-cart" data-id="8" data-image="assets/images/products/product-8.jpg" data-name="Armaf The Pride Rouge Woman" data-price="1042.68">Agregar</button>
 </div>
 </div>
 </div>
@@ -360,8 +355,8 @@ document.addEventListener("DOMContentLoaded", function () {
 <h5 class="card-title">Armaf Club de Nuit Sillage</h5>
 <p class="card-text">Almizcle, bergamota y flor blanca. Versátil.</p>
 <div class="d-flex justify-content-between align-items-center">
-<span class="h5 mb-0">$968.22</span>
-<button class="btn btn-sm btn-outline-primary add-to-cart" data-id="9" data-image="assets/images/products/product-9.jpg" data-name="Armaf Club de Nuit Sillage" data-price="968.22">Agregar</button>
+<span class="h5 mb-0">$1042.68</span>
+<button class="btn btn-sm btn-outline-primary add-to-cart" data-id="9" data-image="assets/images/products/product-9.jpg" data-name="Armaf Club de Nuit Sillage" data-price="1042.68">Agregar</button>
 </div>
 </div>
 </div>
@@ -371,8 +366,8 @@ document.addEventListener("DOMContentLoaded", function () {
 <h5 class="card-title">Lataffa Yara</h5>
 <p class="card-text">Dulce, tropical y femenino con toques de vainilla.</p>
 <div class="d-flex justify-content-between align-items-center">
-<span class="h5 mb-0">$860.52</span>
-<button class="btn btn-sm btn-outline-primary add-to-cart" data-id="10" data-image="assets/images/products/product-10.jpg" data-name="Lataffa Yara" data-price="860.52">Agregar</button>
+<span class="h5 mb-0">$926.67</span>
+<button class="btn btn-sm btn-outline-primary add-to-cart" data-id="10" data-image="assets/images/products/product-10.jpg" data-name="Lataffa Yara" data-price="926.67">Agregar</button>
 </div>
 </div>
 </div>
@@ -382,8 +377,8 @@ document.addEventListener("DOMContentLoaded", function () {
 <h5 class="card-title">Armaf Tag-Him</h5>
 <p class="card-text">Cítrico especiado con base de cuero masculino.</p>
 <div class="d-flex justify-content-between align-items-center">
-<span class="h5 mb-0">$860.52</span>
-<button class="btn btn-sm btn-outline-primary add-to-cart" data-id="11" data-image="assets/images/products/11.jpg" data-name="Armaf Tag-Him" data-price="860.52">Agregar</button>
+<span class="h5 mb-0">$926.67</span>
+<button class="btn btn-sm btn-outline-primary add-to-cart" data-id="11" data-image="assets/images/products/11.jpg" data-name="Armaf Tag-Him" data-price="926.67">Agregar</button>
 </div>
 </div>
 </div>
@@ -393,8 +388,8 @@ document.addEventListener("DOMContentLoaded", function () {
 <h5 class="card-title">Lataffa Emaan</h5>
 <p class="card-text">Florales suaves con almizcle blanco. Femenino.</p>
 <div class="d-flex justify-content-between align-items-center">
-<span class="h5 mb-0">$860.52</span>
-<button class="btn btn-sm btn-outline-primary add-to-cart" data-id="12" data-image="assets/images/products/product-12.jpg" data-name="Lataffa Emaan" data-price="860.52">Agregar</button>
+<span class="h5 mb-0">$926.67</span>
+<button class="btn btn-sm btn-outline-primary add-to-cart" data-id="12" data-image="assets/images/products/product-12.jpg" data-name="Lataffa Emaan" data-price="926.67">Agregar</button>
 </div>
 </div>
 </div>
@@ -404,8 +399,8 @@ document.addEventListener("DOMContentLoaded", function () {
 <h5 class="card-title">Moiselle de Maison Alhambra</h5>
 <p class="card-text">Inspiración de Coco Mademoiselle. Elegante.</p>
 <div class="d-flex justify-content-between align-items-center">
-<span class="h5 mb-0">$860.52</span>
-<button class="btn btn-sm btn-outline-primary add-to-cart" data-id="13" data-image="assets/images/products/product-13.jpg" data-name="Moiselle de Maison Alhambra" data-price="860.52">Agregar</button>
+<span class="h5 mb-0">$926.67</span>
+<button class="btn btn-sm btn-outline-primary add-to-cart" data-id="13" data-image="assets/images/products/product-13.jpg" data-name="Moiselle de Maison Alhambra" data-price="926.67">Agregar</button>
 </div>
 </div>
 </div>
@@ -415,8 +410,8 @@ document.addEventListener("DOMContentLoaded", function () {
 <h5 class="card-title">Bahara King EDP</h5>
 <p class="card-text">Fuerte, especiado y profundo para hombres.</p>
 <div class="d-flex justify-content-between align-items-center">
-<span class="h5 mb-0">$1443.30</span>
-<button class="btn btn-sm btn-outline-primary add-to-cart" data-id="14" data-image="assets/images/products/product-14.jpg" data-name="Bahara King EDP" data-price="1443.3">Agregar</button>
+<span class="h5 mb-0">$1554.32</span>
+<button class="btn btn-sm btn-outline-primary add-to-cart" data-id="14" data-image="assets/images/products/product-14.jpg" data-name="Bahara King EDP" data-price="1554.32">Agregar</button>
 </div>
 </div>
 </div>
@@ -426,8 +421,8 @@ document.addEventListener("DOMContentLoaded", function () {
 <h5 class="card-title">Bahara King Parfum</h5>
 <p class="card-text">Versión más intensa y duradera. Notas ambaradas.</p>
 <div class="d-flex justify-content-between align-items-center">
-<span class="h5 mb-0">$1875.45</span>
-<button class="btn btn-sm btn-outline-primary add-to-cart" data-id="15" data-image="assets/images/products/product-15.jpg" data-name="Bahara King Parfum" data-price="1875.45">Agregar</button>
+<span class="h5 mb-0">$2019.72</span>
+<button class="btn btn-sm btn-outline-primary add-to-cart" data-id="15" data-image="assets/images/products/product-15.jpg" data-name="Bahara King Parfum" data-price="2019.72">Agregar</button>
 </div>
 </div>
 </div>
@@ -437,8 +432,8 @@ document.addEventListener("DOMContentLoaded", function () {
 <h5 class="card-title">Lataffa Velvet Rose EDP</h5>
 <p class="card-text">Rosa y oud, floral intenso y sensual.</p>
 <div class="d-flex justify-content-between align-items-center">
-<span class="h5 mb-0">$707.48</span>
-<button class="btn btn-sm btn-outline-primary add-to-cart" data-id="16" data-image="assets/images/products/product-16.jpg" data-name="Lataffa Velvet Rose EDP" data-price="707.48">Agregar</button>
+<span class="h5 mb-0">$761.88</span>
+<button class="btn btn-sm btn-outline-primary add-to-cart" data-id="16" data-image="assets/images/products/product-16.jpg" data-name="Lataffa Velvet Rose EDP" data-price="761.88">Agregar</button>
 </div>
 </div>
 </div>
@@ -448,8 +443,8 @@ document.addEventListener("DOMContentLoaded", function () {
 <h5 class="card-title">Lataffa Fakhar EDP</h5>
 <p class="card-text">Frutal, dulce y joven para mujeres modernas.</p>
 <div class="d-flex justify-content-between align-items-center">
-<span class="h5 mb-0">$850.53</span>
-<button class="btn btn-sm btn-outline-primary add-to-cart" data-id="17" data-image="assets/images/products/product-17.jpg" data-name="Lataffa Fakhar EDP" data-price="850.53">Agregar</button>
+<span class="h5 mb-0">$915.89</span>
+<button class="btn btn-sm btn-outline-primary add-to-cart" data-id="17" data-image="assets/images/products/product-17.jpg" data-name="Lataffa Fakhar EDP" data-price="915.89">Agregar</button>
 </div>
 </div>
 </div>
@@ -459,8 +454,8 @@ document.addEventListener("DOMContentLoaded", function () {
 <h5 class="card-title">Lataffa Hayaati Florence EDP</h5>
 <p class="card-text">Elegante, floral y almizclado para dama.</p>
 <div class="d-flex justify-content-between align-items-center">
-<span class="h5 mb-0">$821.13</span>
-<button class="btn btn-sm btn-outline-primary add-to-cart" data-id="18" data-image="assets/images/products/product-18.jpg" data-name="Lataffa Hayaati Florence EDP" data-price="821.13">Agregar</button>
+<span class="h5 mb-0">$884.27</span>
+<button class="btn btn-sm btn-outline-primary add-to-cart" data-id="18" data-image="assets/images/products/product-18.jpg" data-name="Lataffa Hayaati Florence EDP" data-price="884.27">Agregar</button>
 </div>
 </div>
 </div>
@@ -470,8 +465,8 @@ document.addEventListener("DOMContentLoaded", function () {
 <h5 class="card-title">Afnan Rare Carbon for Men EDP</h5>
 <p class="card-text">Intenso, especiado y elegante masculino.</p>
 <div class="d-flex justify-content-between align-items-center">
-<span class="h5 mb-0">$860.52</span>
-<button class="btn btn-sm btn-outline-primary add-to-cart" data-id="19" data-image="assets/images/products/product-19.jpg" data-name="Afnan Rare Carbon for Men EDP" data-price="860.52">Agregar</button>
+<span class="h5 mb-0">$926.67</span>
+<button class="btn btn-sm btn-outline-primary add-to-cart" data-id="19" data-image="assets/images/products/product-19.jpg" data-name="Afnan Rare Carbon for Men EDP" data-price="926.67">Agregar</button>
 </div>
 </div>
 </div>
@@ -481,8 +476,8 @@ document.addEventListener("DOMContentLoaded", function () {
 <h5 class="card-title">Perfume Afnan 9 PM EDP</h5>
 <p class="card-text">Dulce y nocturno, ideal para salidas.</p>
 <div class="d-flex justify-content-between align-items-center">
-<span class="h5 mb-0">$968.22</span>
-<button class="btn btn-sm btn-outline-primary add-to-cart" data-id="20" data-image="assets/images/products/product-20.jpg" data-name="Perfume Afnan 9 PM EDP" data-price="968.22">Agregar</button>
+<span class="h5 mb-0">$1042.68</span>
+<button class="btn btn-sm btn-outline-primary add-to-cart" data-id="20" data-image="assets/images/products/product-20.jpg" data-name="Perfume Afnan 9 PM EDP" data-price="1042.68">Agregar</button>
 </div>
 </div>
 </div>
@@ -492,8 +487,8 @@ document.addEventListener("DOMContentLoaded", function () {
 <h5 class="card-title">Perfume Hayaati de Lataffa EDP</h5>
 <p class="card-text">Dulce y afrutado. Versátil unisex.</p>
 <div class="d-flex justify-content-between align-items-center">
-<span class="h5 mb-0">$790.83</span>
-<button class="btn btn-sm btn-outline-primary add-to-cart" data-id="21" data-image="assets/images/products/product-21.jpg" data-name="Perfume Hayaati de Lataffa EDP" data-price="790.83">Agregar</button>
+<span class="h5 mb-0">$851.65</span>
+<button class="btn btn-sm btn-outline-primary add-to-cart" data-id="21" data-image="assets/images/products/product-21.jpg" data-name="Perfume Hayaati de Lataffa EDP" data-price="851.65">Agregar</button>
 </div>
 </div>
 </div>
@@ -503,8 +498,8 @@ document.addEventListener("DOMContentLoaded", function () {
 <h5 class="card-title">Afnan 9PM Rebel de Parfum</h5>
 <p class="card-text">Versión rebelde con mayor proyección. Masculino.</p>
 <div class="d-flex justify-content-between align-items-center">
-<span class="h5 mb-0">$1184.70</span>
-<button class="btn btn-sm btn-outline-primary add-to-cart" data-id="22" data-image="assets/images/products/product-22.jpg" data-name="Afnan 9PM Rebel de Parfum" data-price="1184.7">Agregar</button>
+<span class="h5 mb-0">$1275.84</span>
+<button class="btn btn-sm btn-outline-primary add-to-cart" data-id="22" data-image="assets/images/products/product-22.jpg" data-name="Afnan 9PM Rebel de Parfum" data-price="1275.84">Agregar</button>
 </div>
 </div>
 </div>
@@ -514,8 +509,8 @@ document.addEventListener("DOMContentLoaded", function () {
 <h5 class="card-title">Lataffa Oud for Glory Amethyst Unisex</h5>
 <p class="card-text">Oud potente y especiado. Unisex oriental.</p>
 <div class="d-flex justify-content-between align-items-center">
-<span class="h5 mb-0">$792.56</span>
-<button class="btn btn-sm btn-outline-primary add-to-cart" data-id="23" data-image="assets/images/products/product-23.jpg" data-name="Lataffa Oud for Glory Amethyst Unisex" data-price="792.56">Agregar</button>
+<span class="h5 mb-0">$853.52</span>
+<button class="btn btn-sm btn-outline-primary add-to-cart" data-id="23" data-image="assets/images/products/product-23.jpg" data-name="Lataffa Oud for Glory Amethyst Unisex" data-price="853.52">Agregar</button>
 </div>
 </div>
 </div>
@@ -525,8 +520,8 @@ document.addEventListener("DOMContentLoaded", function () {
 <h5 class="card-title">Perfume Delilah Maison Alhambra</h5>
 <p class="card-text">Inspirado en Delina. Floral femenino.</p>
 <div class="d-flex justify-content-between align-items-center">
-<span class="h5 mb-0">$736.03</span>
-<button class="btn btn-sm btn-outline-primary add-to-cart" data-id="24" data-image="assets/images/products/product-24.jpg" data-name="Perfume Delilah Maison Alhambra" data-price="736.03">Agregar</button>
+<span class="h5 mb-0">$792.63</span>
+<button class="btn btn-sm btn-outline-primary add-to-cart" data-id="24" data-image="assets/images/products/product-24.jpg" data-name="Perfume Delilah Maison Alhambra" data-price="792.63">Agregar</button>
 </div>
 </div>
 </div>
@@ -536,8 +531,8 @@ document.addEventListener("DOMContentLoaded", function () {
 <h5 class="card-title">Lataffa Sublime Badee Al Oud EDP</h5>
 <p class="card-text">Ambarado dulce con rosa. Intenso.</p>
 <div class="d-flex justify-content-between align-items-center">
-<span class="h5 mb-0">$790.83</span>
-<button class="btn btn-sm btn-outline-primary add-to-cart" data-id="25" data-image="assets/images/products/product-25.jpg" data-name="Lataffa Sublime Badee Al Oud EDP" data-price="790.83">Agregar</button>
+<span class="h5 mb-0">$851.65</span>
+<button class="btn btn-sm btn-outline-primary add-to-cart" data-id="25" data-image="assets/images/products/product-25.jpg" data-name="Lataffa Sublime Badee Al Oud EDP" data-price="851.65">Agregar</button>
 </div>
 </div>
 </div>
@@ -547,8 +542,8 @@ document.addEventListener("DOMContentLoaded", function () {
 <h5 class="card-title">Perfume Afnan Noir EDP</h5>
 <p class="card-text">Aromático, limpio, masculino moderno.</p>
 <div class="d-flex justify-content-between align-items-center">
-<span class="h5 mb-0">$893.13</span>
-<button class="btn btn-sm btn-outline-primary add-to-cart" data-id="26" data-image="assets/images/products/product-26.jpg" data-name="Perfume Afnan Noir EDP" data-price="893.13">Agregar</button>
+<span class="h5 mb-0">$961.80</span>
+<button class="btn btn-sm btn-outline-primary add-to-cart" data-id="26" data-image="assets/images/products/product-26.jpg" data-name="Perfume Afnan Noir EDP" data-price="961.80">Agregar</button>
 </div>
 </div>
 </div>
@@ -558,8 +553,8 @@ document.addEventListener("DOMContentLoaded", function () {
 <h5 class="card-title">Perfume Club de Nuit Intense EDP</h5>
 <p class="card-text">Inspirado en Aventus. Masculino potente.</p>
 <div class="d-flex justify-content-between align-items-center">
-<span class="h5 mb-0">$968.22</span>
-<button class="btn btn-sm btn-outline-primary add-to-cart" data-id="27" data-image="assets/images/products/product-27.jpg" data-name="Perfume Club de Nuit Intense EDP" data-price="968.22">Agregar</button>
+<span class="h5 mb-0">$1042.68</span>
+<button class="btn btn-sm btn-outline-primary add-to-cart" data-id="27" data-image="assets/images/products/product-27.jpg" data-name="Perfume Club de Nuit Intense EDP" data-price="1042.68">Agregar</button>
 </div>
 </div>
 </div>
@@ -569,8 +564,8 @@ document.addEventListener("DOMContentLoaded", function () {
 <h5 class="card-title">Afnan 9AM Dive EDP</h5>
 <p class="card-text">Fresco, limpio y energético. Masculino.</p>
 <div class="d-flex justify-content-between align-items-center">
-<span class="h5 mb-0">$1030.23</span>
-<button class="btn btn-sm btn-outline-primary add-to-cart" data-id="28" data-image="assets/images/products/product-28.jpg" data-name="Afnan 9AM Dive EDP" data-price="1030.23">Agregar</button>
+<span class="h5 mb-0">$1109.45</span>
+<button class="btn btn-sm btn-outline-primary add-to-cart" data-id="28" data-image="assets/images/products/product-28.jpg" data-name="Afnan 9AM Dive EDP" data-price="1109.45">Agregar</button>
 </div>
 </div>
 </div>
@@ -580,8 +575,8 @@ document.addEventListener("DOMContentLoaded", function () {
 <h5 class="card-title">Lataffa Khamrah Qahwa EDP</h5>
 <p class="card-text">Café, especias y vainilla. Unisex.</p>
 <div class="d-flex justify-content-between align-items-center">
-<span class="h5 mb-0">$914.37</span>
-<button class="btn btn-sm btn-outline-primary add-to-cart" data-id="29" data-image="assets/images/products/product-29.jpg" data-name="Lataffa Khamrah Qahwa EDP" data-price="914.37">Agregar</button>
+<span class="h5 mb-0">$984.68</span>
+<button class="btn btn-sm btn-outline-primary add-to-cart" data-id="29" data-image="assets/images/products/product-29.jpg" data-name="Lataffa Khamrah Qahwa EDP" data-price="984.68">Agregar</button>
 </div>
 </div>
 </div>
@@ -591,8 +586,8 @@ document.addEventListener("DOMContentLoaded", function () {
 <h5 class="card-title">Lataffa Asad EDP</h5>
 <p class="card-text">Dulce, especiado y cálido. Masculino.</p>
 <div class="d-flex justify-content-between align-items-center">
-<span class="h5 mb-0">$914.37</span>
-<button class="btn btn-sm btn-outline-primary add-to-cart" data-id="30" data-image="assets/images/products/product-30.jpg" data-name="Lataffa Asad EDP" data-price="914.37">Agregar</button>
+<span class="h5 mb-0">$984.68</span>
+<button class="btn btn-sm btn-outline-primary add-to-cart" data-id="30" data-image="assets/images/products/product-30.jpg" data-name="Lataffa Asad EDP" data-price="984.68">Agregar</button>
 </div>
 </div>
 </div>
@@ -602,8 +597,8 @@ document.addEventListener("DOMContentLoaded", function () {
 <h5 class="card-title">Lataffa Asad Zanzibar</h5>
 <p class="card-text">Tropical, cálido y exótico. Unisex.</p>
 <div class="d-flex justify-content-between align-items-center">
-<span class="h5 mb-0">$860.52</span>
-<button class="btn btn-sm btn-outline-primary add-to-cart" data-id="31" data-image="assets/images/products/product-31.jpg" data-name="Lataffa Asad Zanzibar" data-price="860.52">Agregar</button>
+<span class="h5 mb-0">$926.67</span>
+<button class="btn btn-sm btn-outline-primary add-to-cart" data-id="31" data-image="assets/images/products/product-31.jpg" data-name="Lataffa Asad Zanzibar" data-price="926.67">Agregar</button>
 </div>
 </div>
 </div>
@@ -613,8 +608,8 @@ document.addEventListener("DOMContentLoaded", function () {
 <h5 class="card-title">Perfume Fakhar Lataffa Pride Gold</h5>
 <p class="card-text">Dulce, frutal y brillante. Mujer joven.</p>
 <div class="d-flex justify-content-between align-items-center">
-<span class="h5 mb-0">$860.52</span>
-<button class="btn btn-sm btn-outline-primary add-to-cart" data-id="32" data-image="assets/images/products/product-32.jpg" data-name="Perfume Fakhar Lataffa Pride Gold" data-price="860.52">Agregar</button>
+<span class="h5 mb-0">$926.67</span>
+<button class="btn btn-sm btn-outline-primary add-to-cart" data-id="32" data-image="assets/images/products/product-32.jpg" data-name="Perfume Fakhar Lataffa Pride Gold" data-price="926.67">Agregar</button>
 </div>
 </div>
 </div>
@@ -624,8 +619,8 @@ document.addEventListener("DOMContentLoaded", function () {
 <h5 class="card-title">Velvet Oud EDP</h5>
 <p class="card-text">Oud intenso con toques ambarados. Masculino.</p>
 <div class="d-flex justify-content-between align-items-center">
-<span class="h5 mb-0">$755.79</span>
-<button class="btn btn-sm btn-outline-primary add-to-cart" data-id="33" data-image="assets/images/products/product-33.jpg" data-name="Velvet Oud EDP" data-price="755.79">Agregar</button>
+<span class="h5 mb-0">$813.91</span>
+<button class="btn btn-sm btn-outline-primary add-to-cart" data-id="33" data-image="assets/images/products/product-33.jpg" data-name="Velvet Oud EDP" data-price="813.91">Agregar</button>
 </div>
 </div>
 </div>
@@ -635,8 +630,8 @@ document.addEventListener("DOMContentLoaded", function () {
 <h5 class="card-title">Armaf Odyssey Homme</h5>
 <p class="card-text">Fresco, cítrico y limpio. Hombre moderno.</p>
 <div class="d-flex justify-content-between align-items-center">
-<span class="h5 mb-0">$1074.57</span>
-<button class="btn btn-sm btn-outline-primary add-to-cart" data-id="34" data-image="assets/images/products/product-34.jpg" data-name="Armaf Odyssey Homme" data-price="1074.57">Agregar</button>
+<span class="h5 mb-0">$1157.19</span>
+<button class="btn btn-sm btn-outline-primary add-to-cart" data-id="34" data-image="assets/images/products/product-34.jpg" data-name="Armaf Odyssey Homme" data-price="1157.19">Agregar</button>
 </div>
 </div>
 </div>
@@ -646,8 +641,8 @@ document.addEventListener("DOMContentLoaded", function () {
 <h5 class="card-title">Lataffa Sakeena</h5>
 <p class="card-text">Rosa, vainilla y almizcle. Muy femenino.</p>
 <div class="d-flex justify-content-between align-items-center">
-<span class="h5 mb-0">$914.37</span>
-<button class="btn btn-sm btn-outline-primary add-to-cart" data-id="35" data-image="assets/images/products/product-35.jpg" data-name="Lataffa Sakeena" data-price="914.37">Agregar</button>
+<span class="h5 mb-0">$984.68</span>
+<button class="btn btn-sm btn-outline-primary add-to-cart" data-id="35" data-image="assets/images/products/product-35.jpg" data-name="Lataffa Sakeena" data-price="984.68">Agregar</button>
 </div>
 </div>
 </div>
@@ -657,8 +652,8 @@ document.addEventListener("DOMContentLoaded", function () {
 <h5 class="card-title">Lataffa Mayar</h5>
 <p class="card-text">Ligera y floral para primavera. Femenina.</p>
 <div class="d-flex justify-content-between align-items-center">
-<span class="h5 mb-0">$891.33</span>
-<button class="btn btn-sm btn-outline-primary add-to-cart" data-id="37" data-image="assets/images/products/product-36.jpg" data-name="Lataffa Mayar" data-price="891.33">Agregar</button>
+<span class="h5 mb-0">$959.78</span>
+<button class="btn btn-sm btn-outline-primary add-to-cart" data-id="37" data-image="assets/images/products/product-36.jpg" data-name="Lataffa Mayar" data-price="959.78">Agregar</button>
 </div>
 </div>
 </div>
@@ -668,8 +663,8 @@ document.addEventListener("DOMContentLoaded", function () {
 <h5 class="card-title">Armaf Club de Nuit Man</h5>
 <p class="card-text">Frutal y especiado con buen rendimiento. Hombre.</p>
 <div class="d-flex justify-content-between align-items-center">
-<span class="h5 mb-0">$942.87</span>
-<button class="btn btn-sm btn-outline-primary add-to-cart" data-id="38" data-image="assets/images/products/product-37.jpg" data-name="Armaf Club de Nuit Man" data-price="942.87">Agregar</button>
+<span class="h5 mb-0">$1015.28</span>
+<button class="btn btn-sm btn-outline-primary add-to-cart" data-id="38" data-image="assets/images/products/product-37.jpg" data-name="Armaf Club de Nuit Man" data-price="1015.28">Agregar</button>
 </div>
 </div>
 </div>
@@ -679,8 +674,8 @@ document.addEventListener("DOMContentLoaded", function () {
 <h5 class="card-title">Lataffa Al Noble Safeer</h5>
 <p class="card-text">Amaderado y cálido, muy versátil. Hombre.</p>
 <div class="d-flex justify-content-between align-items-center">
-<span class="h5 mb-0">$842.13</span>
-<button class="btn btn-sm btn-outline-primary add-to-cart" data-id="39" data-image="assets/images/products/product-38.jpg" data-name="Lataffa Al Noble Safeer" data-price="842.13">Agregar</button>
+<span class="h5 mb-0">$906.76</span>
+<button class="btn btn-sm btn-outline-primary add-to-cart" data-id="39" data-image="assets/images/products/product-38.jpg" data-name="Lataffa Al Noble Safeer" data-price="906.76">Agregar</button>
 </div>
 </div>
 </div>
@@ -690,8 +685,8 @@ document.addEventListener("DOMContentLoaded", function () {
 <h5 class="card-title">Lataffa Hayaati Gold Elixir</h5>
 <p class="card-text">Cremoso y dulce con coco y vainilla. Mujer.</p>
 <div class="d-flex justify-content-between align-items-center">
-<span class="h5 mb-0">$1016.73</span>
-<button class="btn btn-sm btn-outline-primary add-to-cart" data-id="40" data-image="assets/images/products/product-39.jpg" data-name="Lataffa Hayaati Gold Elixir" data-price="1016.73">Agregar</button>
+<span class="h5 mb-0">$1094.71</span>
+<button class="btn btn-sm btn-outline-primary add-to-cart" data-id="40" data-image="assets/images/products/product-39.jpg" data-name="Lataffa Hayaati Gold Elixir" data-price="1094.71">Agregar</button>
 </div>
 </div>
 </div>
@@ -701,8 +696,8 @@ document.addEventListener("DOMContentLoaded", function () {
 <h5 class="card-title">Armaf Club de Nuit Intense Dama</h5>
 <p class="card-text">Intensa, floral, con rosa y almizcle. Mujer.</p>
 <div class="d-flex justify-content-between align-items-center">
-<span class="h5 mb-0">$860.52</span>
-<button class="btn btn-sm btn-outline-primary add-to-cart" data-id="41" data-image="assets/images/products/product-40.jpg" data-name="Armaf Club de Nuit Intense Dama" data-price="860.52">Agregar</button>
+<span class="h5 mb-0">$926.67</span>
+<button class="btn btn-sm btn-outline-primary add-to-cart" data-id="41" data-image="assets/images/products/product-40.jpg" data-name="Armaf Club de Nuit Intense Dama" data-price="926.67">Agregar</button>
 </div>
 </div>
 </div>
@@ -781,7 +776,6 @@ document.addEventListener("DOMContentLoaded", function () {
 <script src="./assets/js/main.js"></script>
 <script src="./assets/js/productos.js"></script>
 <!-- Carrito JS -->
-
 
 </body>
 </html>
