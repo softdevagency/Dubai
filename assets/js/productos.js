@@ -196,12 +196,14 @@ function checkout() {
 
 // Script unificado y corregido para carrito + botón Mercado Pago
 
+
+
+
 // Esperar al DOM
 window.addEventListener('DOMContentLoaded', () => {
   const allProducts = [...document.querySelectorAll('#productsContainer > div')];
   const productsPerPage = 10;
-  let currentPage = 1;
-  
+
   window.cart = JSON.parse(localStorage.getItem('cart')) || [];
 
   const cartItemsContainer = document.getElementById('cartItemsContainer');
@@ -212,56 +214,75 @@ window.addEventListener('DOMContentLoaded', () => {
   const cartCounter = document.getElementById('cartCounter');
   const cartCounterMobile = document.getElementById('cartCounterMobile');
 
-  function paginateProducts(page = 1) {
-    currentPage = page;
-    allProducts.forEach((el, i) => {
-      el.style.display = (i >= (page - 1) * productsPerPage && i < page * productsPerPage) ? 'block' : 'none';
-    });
-  }
+  function promptContactInfo(callback) {
+    // Crear modal
+    const modal = document.createElement('div');
+    modal.innerHTML = `
+      <style>
+        @keyframes pulse-warning {
+          0% { box-shadow: 0 0 0px rgba(220,53,69,0.7); }
+          50% { box-shadow: 0 0 20px rgba(220,53,69,0.7); }
+          100% { box-shadow: 0 0 0px rgba(220,53,69,0.7); }
+        }
+      </style>
+      <div id="contactModal" style="
+            position:fixed; top:0; left:0; width:100%; height:100%;
+            background:rgba(0,0,0,0.8); display:flex;
+            align-items:center; justify-content:center; z-index:10000;">
+        <div style="
+            background:#fff; padding:25px; max-width:420px; width:90%;
+            border:3px solid #dc3545; border-radius:8px;
+            animation:pulse-warning 1.5s infinite;">
+          <h4 style="color:#dc3545; margin-bottom:15px; display:flex; align-items:center; gap:8px;">
+            <i class="fas fa-exclamation-triangle"></i> ¡IMPORTANTE!
+          </h4>
+          <p style="font-weight:bold; margin-bottom:20px;">
+            Para poder procesar tu pedido, <span style="color:#dc3545;">es OBLIGATORIO</span> que proporciones un número de WhatsApp y correo válidos.
+          </p>
+          <input type="tel" class="form-control mb-2" id="mpPhone" placeholder="WhatsApp (10+ dígitos)" />
+          <input type="email" class="form-control mb-3" id="mpEmail" placeholder="Correo electrónico" />
+          <div style="text-align:right;">
+            <button id="cancelMP" class="btn btn-outline-secondary me-2">Cancelar</button>
+            <button id="confirmMP" class="btn btn-danger">Continuar</button>
+          </div>
+        </div>
+      </div>
+    `;
+    document.body.appendChild(modal);
 
-  function createPaginationControls() {
-    const container = document.querySelector('#productsContainer');
-    const pages = Math.ceil(allProducts.length / productsPerPage);
-    const pagination = document.createElement('div');
-    pagination.className = 'd-flex justify-content-center mt-4 gap-2 flex-wrap';
-    for (let i = 1; i <= pages; i++) {
-      const btn = document.createElement('button');
-      btn.className = 'btn btn-outline-secondary';
-      btn.textContent = i;
-      btn.onclick = () => paginateProducts(i);
-      pagination.appendChild(btn);
-    }
-    container.parentNode.appendChild(pagination);
+    // Handlers
+    document.getElementById('cancelMP').onclick = () => modal.remove();
+    document.getElementById('confirmMP').onclick = () => {
+      const phone = document.getElementById('mpPhone').value.trim();
+      const email = document.getElementById('mpEmail').value.trim();
+      if (!/^[0-9]{10,15}$/.test(phone) || !/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)) {
+        alert('¡Atención! Verifica que número y correo sean válidos.');
+        return;
+      }
+      modal.remove();
+      callback({ phone, email });
+    };
   }
 
   function renderCart() {
     cartItemsContainer.innerHTML = '';
-    let total = 0;
-    let count = 0;
-
-    if (window.cart.length === 0) {
+    let total = 0, count = 0;
+    if (!window.cart.length) {
       cartItemsContainer.innerHTML = '<p class="text-muted">Tu carrito está vacío</p>';
       cartTotal.textContent = '$0.00';
-      buyMP.disabled = true;
-      buyWA.disabled = true;
-      installments.disabled = true;
-      cartCounter.textContent = "0";
-      cartCounterMobile.textContent = "0";
+      buyMP.disabled = true; buyWA.disabled = true; installments.disabled = true;
+      cartCounter.textContent = cartCounterMobile.textContent = '0';
       localStorage.setItem('cart', JSON.stringify(window.cart));
       return;
     }
-
-    window.cart.forEach((item, index) => {
+    window.cart.forEach((item, idx) => {
       const subtotal = item.price * item.quantity;
-      total += subtotal;
-      count += item.quantity;
-      const div = document.createElement('div');
-      div.className = 'cart-item';
+      total += subtotal; count += item.quantity;
+      const div = document.createElement('div'); div.className = 'cart-item';
       div.innerHTML = `
         <div class="d-flex align-items-center gap-3">
-          <img src="${item.image}" alt="${item.name}">
-          <div>
-            <h6 class="mb-1"><span style='color:#007bff'>${index + 1}.</span> ${item.name}</h6>
+          <img src="${item.image}" alt="${item.name}"><div>
+            <h6 class="mb-1"><span style="color:#007bff">${idx+1}.</span> ${item.name}</h6>
             <small>$${item.price.toFixed(2)} x ${item.quantity}</small>
           </div>
         </div>
@@ -271,119 +292,105 @@ window.addEventListener('DOMContentLoaded', () => {
         </div>
       `;
       div.querySelector('.remove-item').onclick = () => {
-        window.cart.splice(index, 1);
+        window.cart.splice(idx,1);
         renderCart();
       };
       cartItemsContainer.appendChild(div);
     });
-
     if (total >= 2000) {
-      const envioDiv = document.createElement('div');
-      envioDiv.className = 'text-success mt-3 fw-bold';
-      envioDiv.textContent = '¡Felicidades! Envío gratis en esta compra.';
-      cartItemsContainer.appendChild(envioDiv);
+      const info = document.createElement('div');
+      info.className = 'text-success mt-3 fw-bold';
+      info.textContent = '¡Felicidades! Envío gratis.';
+      cartItemsContainer.appendChild(info);
     }
-
-    cartTotal.textContent = '$' + total.toFixed(2);
-    cartCounter.textContent = count.toString();
-    cartCounterMobile.textContent = count.toString();
-    buyMP.disabled = false;
-    buyWA.disabled = false;
-    installments.disabled = false;
+    cartTotal.textContent = '$'+total.toFixed(2);
+    cartCounter.textContent = cartCounterMobile.textContent = count;
+    buyMP.disabled = buyWA.disabled = false; installments.disabled = false;
     localStorage.setItem('cart', JSON.stringify(window.cart));
   }
 
-  function addToCart(button) {
-    const name = button.dataset.name;
-    const price = parseFloat(button.dataset.price);
-    const image = button.dataset.image;
-    const existing = window.cart.find(p => p.name === name);
-    if (existing) {
-      existing.quantity += 1;
-    } else {
-      window.cart.push({ name, price, image, quantity: 1 });
-    }
-    button.textContent = '✓ Agregado';
-    button.classList.remove('btn-outline-primary');
-    button.classList.add('btn-success');
-    setTimeout(() => {
-      button.textContent = 'Agregar';
-      button.classList.remove('btn-success');
-      button.classList.add('btn-outline-primary');
-    }, 1000);
-    renderCart();
-  }
-
-  document.querySelectorAll('.add-to-cart').forEach(button => {
-    button.addEventListener('click', () => addToCart(button));
-  });
+  document.querySelectorAll('.add-to-cart').forEach(btn => 
+    btn.addEventListener('click', () => {
+      const { name, price, image } = btn.dataset;
+      const existing = window.cart.find(p => p.name === name);
+      if (existing) existing.quantity++;
+      else window.cart.push({ name, price: parseFloat(price), image, quantity: 1 });
+      btn.textContent='✓ Agregado';
+      btn.classList.replace('btn-outline-primary','btn-success');
+      setTimeout(() => {
+        btn.textContent='Agregar';
+        btn.classList.replace('btn-success','btn-outline-primary');
+      },1000);
+      renderCart();
+    })
+  );
 
   buyMP?.addEventListener('click', () => {
-    if (!window.cart.length) return alert('Tu carrito está vacío');
-
-    let items = window.cart.map(item => ({
-      title: item.name,
-      quantity: item.quantity,
-      unit_price: item.price,
-      currency_id: "MXN"
-    }));
-
-    fetch("https://api.mercadopago.com/checkout/preferences", {
-      method: "POST",
-      headers: {
-        Authorization: "Bearer APP_USR-4844991177063586-072501-45c4905e271e7fab316fb1a2920f3805-128349064",
-        "Content-Type": "application/json"
-      },
-      body: JSON.stringify({
-        items,
-        payment_methods: {
-          installments: parseInt(installments?.value || '1')
+    if (!window.cart.length) { alert('Carrito vacío'); return; }
+    promptContactInfo(({phone,email}) => {
+      const items = window.cart.map(({name,quantity,price}) => ({
+        title: name,
+        quantity,
+        unit_price: price,
+        currency_id: 'MXN'
+      }));
+      fetch('https://api.mercadopago.com/checkout/preferences', {
+        method: 'POST',
+        headers: {
+          Authorization: 'Bearer APP_USR-4844991177063586-072501-45c4905e271e7fab316fb1a2920f3805-128349064',
+          'Content-Type': 'application/json'
         },
-        back_urls: {
-          success: "https://www.fragantedubai.com/success.html",
-          failure: "https://www.fragantedubai.com/failure.html",
-          pending: "https://www.fragantedubai.com/pending.html"
-        },
-        auto_return: "approved"
+        body: JSON.stringify({
+          items,
+          payer: { phone: { number: phone }, email },
+          payment_methods: { installments: parseInt(installments.value || '1') },
+          back_urls: {
+            success: 'https://www.fragantedubai.com/success.html',
+            failure: 'https://www.fragantedubai.com/failure.html',
+            pending: 'https://www.fragantedubai.com/pending.html'
+          },
+          auto_return: 'approved'
+        })
       })
-    })
-    .then(res => res.json())
-    .then(data => {
-      if (data.init_point) {
-        window.location.href = data.init_point;
-      } else {
-        console.error("Respuesta de MP sin init_point:", data);
-        alert("No se pudo generar el link de pago.");
-      }
-    })
-    .catch(err => {
-      console.error("Error creando preferencia:", err);
-      alert("Hubo un error al conectar con Mercado Pago");
+      .then(r => r.json())
+      .then(data => {
+        if (data.init_point) window.location.href = data.init_point;
+        else alert('Error generando link de pago');
+      })
+      .catch(() => alert('Error de conexión'));
     });
   });
 
-  // Filtros y paginación
+  // Búsqueda y filtros
   document.getElementById('searchInput')?.addEventListener('input', filterProducts);
   document.getElementById('categoryFilter')?.addEventListener('change', filterProducts);
   function filterProducts() {
-    const searchTerm = document.getElementById('searchInput')?.value.toLowerCase();
-    const category = document.getElementById('categoryFilter')?.value;
-    allProducts.forEach(product => {
-      const name = product.querySelector('.card-title').textContent.toLowerCase();
-      const description = product.querySelector('.card-text').textContent.toLowerCase();
-      const matchesSearch = name.includes(searchTerm) || description.includes(searchTerm);
-      const matchesCategory = category === 'all' || product.dataset.category === category;
-      product.style.display = (matchesSearch && matchesCategory) ? 'block' : 'none';
+    const term = document.getElementById('searchInput').value.toLowerCase();
+    const cat = document.getElementById('categoryFilter').value;
+    allProducts.forEach(p => {
+      const n = p.querySelector('.card-title').textContent.toLowerCase();
+      const d = p.querySelector('.card-text').textContent.toLowerCase();
+      p.style.display = (n.includes(term)||d.includes(term))&&(cat==='all'||p.dataset.category===cat)?'block':'none';
     });
   }
 
-  // Inicializaciones
-  createPaginationControls();
-  paginateProducts();
+  // Paginación
+  const pagination = document.createElement('div');
+  pagination.className = 'd-flex justify-content-center mt-4 gap-2';
+  const pages = Math.ceil(allProducts.length/productsPerPage);
+  for(let i=1;i<=pages;i++){
+    const b = document.createElement('button');
+    b.className='btn btn-outline-secondary'; b.textContent = i;
+    b.onclick = ()=>{ allProducts.forEach((e,j)=>
+      e.style.display=j>=(i-1)*productsPerPage&&j<i*productsPerPage?'block':'none'
+    ); };
+    pagination.appendChild(b);
+  }
+  document.getElementById('productsContainer').parentNode.appendChild(pagination);
+
+  // Inicialización
   renderCart();
 });
-
-
 
 function changeQuantity(index, delta) {
   if (cart[index]) {
@@ -394,4 +401,7 @@ function changeQuantity(index, delta) {
     updateCartSidebar();
     saveCartToLocalStorage(); // si usas persistencia
   }
+}
+payer: {
+  phone: { number: userPhone }
 }

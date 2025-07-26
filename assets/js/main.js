@@ -981,8 +981,38 @@ document.addEventListener('DOMContentLoaded', function() {
     adjustForDesktop();
     window.addEventListener('resize', adjustForDesktop);
 });
+// Espera a que cargue el DOM
+document.addEventListener('DOMContentLoaded', () => {
+  // 1. Bloquear clic derecho
+  document.addEventListener('contextmenu', event => {
+    event.preventDefault();
+  });
+
+  // 2. Bloquear teclas de acceso a herramientas de desarrollador
+  document.addEventListener('keydown', event => {
+    // F12
+    if (event.keyCode === 123) {
+      event.preventDefault();
+    }
+    // Ctrl+Shift+I, Ctrl+Shift+J
+    if (event.ctrlKey && event.shiftKey && (event.key === 'I' || event.key === 'J')) {
+      event.preventDefault();
+    }
+    // Ctrl+U (ver código fuente)
+    if (event.ctrlKey && event.key === 'U') {
+      event.preventDefault();
+    }
+    // Ctrl+S (guardar página)
+    if (event.ctrlKey && event.key === 'S') {
+      event.preventDefault();
+    }
+  });
+});
 
 
   if (location.hostname === 'www.fragantedubai.com') {
     window.location.href = 'https://fragantedubai.com';
   }
+
+
+  
