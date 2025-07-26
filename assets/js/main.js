@@ -1,5 +1,8 @@
 "use strict";
-
+// ─────────── Bloqueo global (plan B) ───────────
+console.log('🔒 Bloqueador de menú cargado');
+document.oncontextmenu = () => false;
+document.onmousedown    = e => e.button === 2 ? false : true;
 // Sticky Header JS
 const nav = document.querySelector(".sticky-header");
 const header = document.querySelector(".header");
@@ -981,33 +984,6 @@ document.addEventListener('DOMContentLoaded', function() {
     adjustForDesktop();
     window.addEventListener('resize', adjustForDesktop);
 });
-// Espera a que cargue el DOM
-document.addEventListener('DOMContentLoaded', () => {
-  // 1. Bloquear clic derecho
-  document.addEventListener('contextmenu', event => {
-    event.preventDefault();
-  });
-
-  // 2. Bloquear teclas de acceso a herramientas de desarrollador
-  document.addEventListener('keydown', event => {
-    // F12
-    if (event.keyCode === 123) {
-      event.preventDefault();
-    }
-    // Ctrl+Shift+I, Ctrl+Shift+J
-    if (event.ctrlKey && event.shiftKey && (event.key === 'I' || event.key === 'J')) {
-      event.preventDefault();
-    }
-    // Ctrl+U (ver código fuente)
-    if (event.ctrlKey && event.key === 'U') {
-      event.preventDefault();
-    }
-    // Ctrl+S (guardar página)
-    if (event.ctrlKey && event.key === 'S') {
-      event.preventDefault();
-    }
-  });
-});
 
 
   if (location.hostname === 'www.fragantedubai.com') {
@@ -1015,4 +991,28 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
 
-  
+  (function() {
+  const bloquea = e => { e.preventDefault(); return false; };
+
+  // Captura cualquier intento de menú contextual
+  window.addEventListener('contextmenu', bloquea, true);
+  document.documentElement.addEventListener('contextmenu', bloquea, true);
+
+  // Bloquea mousedown botón derecho
+  document.addEventListener('mousedown', e => {
+    if (e.button === 2) return bloquea(e);
+  }, true);
+
+  // Bloquea atajos de DevTools y ver fuente
+  document.addEventListener('keydown', e => {
+    const kc = e.keyCode;
+    if (
+      kc === 123 ||                                  // F12
+      (e.ctrlKey && e.shiftKey && [73,74,67].includes(kc)) || // Ctrl+Shift+I/J/C
+      (e.ctrlKey && [85,83].includes(kc)) ||         // Ctrl+U / Ctrl+S
+      (e.metaKey && e.altKey && kc === 73)           // Cmd+Option+I (macOS)
+    ) {
+      return bloquea(e);
+    }
+  }, true);
+})();
