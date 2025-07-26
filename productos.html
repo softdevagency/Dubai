@@ -215,9 +215,16 @@ document.addEventListener("DOMContentLoaded", function () {
 <span id="cartTotal">$0.00</span>
 </div>
 <div class="d-grid gap-2 mt-4">
-<div class="alert alert-success text-center" id="whatsappDiscountMsg" style="font-weight:bold; background-color:#d4edda; color:#155724; border:1px solid #c3e6cb;">🎉 ¡15% de descuento si compras por WhatsApp!</div><button class="btn btn-success" id="buyWhatsApp">Comprar por WhatsApp</button>
-<button class="btn btn-primary" id="buyMercadoPago">Comprar con Mercado Pago</button>
+<div class="alert alert-info text-center" style="font-weight:bold; background-color:#e3f2fd; color:#0d47a1; border:1px solid #90caf9;">💳 ¡Hasta 6 meses sin intereses pagando con Mercado Pago!</div><div class="alert alert-success text-center" id="whatsappDiscountMsg" style="font-weight:bold; background-color:#d4edda; color:#155724; border:1px solid #c3e6cb;">🎉 ¡15% de descuento si compras por WhatsApp!</div><button class="btn btn-success d-flex align-items-center justify-content-center gap-2" id="buyWhatsApp"><i class="fab fa-whatsapp"></i><span>Comprar por WhatsApp</button>
+<button class="btn btn-primary d-flex align-items-center justify-content-center gap-2"
+        style="background-color:#009EE3;border:none;" id="buyMercadoPago">
+  <img src="/assets/images/logo/mercadopago.png"
+       alt="Mercado Pago" style="height: 24px;" />
+  <span>Pagar con Mercado Pago</span>
+</button>
+<span>Selecciona los meses</span>
 <select class="form-select mt-2" id="installmentsSelector">
+   
 <option value="1">1 pago</option>
 <option value="3">3 meses sin intereses</option>
 <option value="6">6 meses sin intereses</option>
@@ -777,5 +784,6 @@ document.addEventListener("DOMContentLoaded", function () {
 <script src="./assets/js/productos.js"></script>
 <!-- Carrito JS -->
 
+<script src="https://sdk.mercadopago.com/js/v2"></script>
 </body>
 </html>
