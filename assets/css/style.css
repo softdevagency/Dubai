@@ -4852,3 +4852,13 @@ hr {
   background-color: #f8f8f8; /* o blanco */
   padding: 10px;
 }
+
+.btn-mercado-pago {
+  background-color: #009EE3;
+  color: white;
+  border: none;
+}
+
+.btn-mercado-pago:hover {
+  background-color: #0079b3;
+}
