@@ -1,0 +1,20 @@
+User-agent: *
+Disallow: /admin/
+Disallow: /backend/
+Disallow: /cgi-bin/
+Disallow: /tmp/
+Disallow: /private/
+Disallow: /cart/
+Disallow: /checkout/
+Disallow: /confirmacion/
+
+# Permitir acceso total a páginas públicas
+Allow: /index.html
+Allow: /productos.html
+Allow: /contacto.html
+Allow: /nosotros.html
+Allow: /politicas-privacidad.html
+Allow: /terminos-condiciones.html
+
+# Sitemap location
+Sitemap: https://www.fragantedubai.com/sitemap.xml
