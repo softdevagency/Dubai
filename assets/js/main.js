@@ -112,7 +112,11 @@ const slideToggle = (target, time) => {
 const offCanvasMenu = (selector) => {
   const offCanvasNav = document.querySelector(selector);
 
+  if (!offCanvasNav) return; // ✅ prevención
+
   offCanvasNav.querySelectorAll(".menu-expand").forEach((item) => {
+    // ...
+
     item.addEventListener("click", (e) => {
       e.preventDefault();
       const parent = item.parentElement.parentElement;

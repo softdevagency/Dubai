@@ -334,10 +334,9 @@ window.addEventListener('DOMContentLoaded', () => {
         unit_price: price,
         currency_id: 'MXN'
       }));
-      fetch('https://api.mercadopago.com/checkout/preferences', {
+      fetch('https://sweet-glitter-5e0c.softdevagency.workers.dev/', {
         method: 'POST',
         headers: {
-          Authorization: 'Bearer APP_USR-4844991177063586-072501-45c4905e271e7fab316fb1a2920f3805-128349064',
           'Content-Type': 'application/json'
         },
         body: JSON.stringify({
@@ -401,7 +400,4 @@ function changeQuantity(index, delta) {
     updateCartSidebar();
     saveCartToLocalStorage(); // si usas persistencia
   }
-}
-payer: {
-  phone: { number: userPhone }
 }
